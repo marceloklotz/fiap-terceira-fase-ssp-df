@@ -1,6 +1,6 @@
 # 🏫👨‍💻 Tech Challenge - Pós Tech (8IADT) FIAP - Fase 3: Assistente virtual de atendimento médico
 
-Este repositório contém o notebook [FIAP_Fase_3.ipynb](https://github.com/marceloklotz/fiap-terceira-fase/blob/main/FIAP_Fase_3.ipynb) que apresenta o desenvolvimento de um protótipo de assistente virtual voltado para a saúde da mulher, com foco específico em triagem ginecológica e apoio à decisão clínica. O processo foi estruturado para aplicar os conceitos fundamentais da Fase 3 do curso, integrando ajuste fino de modelos, recuperação de informações e orquestração de fluxos complexos, conforme instruções contidas no [PDF](https://github.com/marceloklotz/fiap-terceira-fase/blob/main/8IADT-Fase3-TechChallenge-Secretaria.pdf).
+Este repositório contém o notebook [FIAP_Fase_3.ipynb](https://github.com/marceloklotz/fiap-terceira-fase-ssp-df) que apresenta o desenvolvimento de um protótipo de assistente virtual voltado para a saúde da mulher, com foco específico em triagem ginecológica e apoio à decisão clínica. O processo foi estruturado para aplicar os conceitos fundamentais da Fase 3 do curso, integrando ajuste fino de modelos, recuperação de informações e orquestração de fluxos complexos, conforme instruções contidas no [PDF](https://github.com/marceloklotz/fiap-terceira-fase-ssp-df/blob/main/Desafio-8IADT-Fase3-TechChallenge-Secretaria.pdf).
 
 O projeto seguiu uma metodologia dividida em etapas técnicas claras: 
 - **Preparação do Ambiente:** Configuração do Google Colab com a instalação de bibliotecas essenciais como LangChain, LangGraph, Transformers e FAISS.
@@ -11,13 +11,13 @@ O projeto seguiu uma metodologia dividida em etapas técnicas claras:
 - **Avaliação e Testes:** Execução de uma bateria de testes automatizados com cenários clínicos reais para validar a lógica de decisão e a acurácia da classificação de risco.
 
 Link do notebook encontra-se disponível em:
-https://github.com/marceloklotz/fiap-terceira-fase/blob/main/FIAP_Fase_3.ipynb
+https://github.com/marceloklotz/fiap-terceira-fase-ssp-df/
 
 ## 📝 Descrição do Desafio
 
 A proposta do desafio foi desenvolver um assistente virtual médico personalizado, treinado com dados próprios da instituição, capaz de apoiar condutas clínicas, responder dúvidas de profissionais e sugerir procedimentos alinhados aos protocolos internos de atendimento feminino. O desafio também envolve a criação de fluxos automatizados, seguros e integrados, utilizando LangChain, para coordenar ações como verificação de exames ginecológicos pendentes, recomendação de tratamentos reprodutivos, emissão de alertas para possíveis casos de violência doméstica e articulação de atendimento multidisciplinar, considerando as particularidades e sensibilidades do cuidado à mulher.
 
-Para tanto, utilizou-se o fine-tuning de LLMs com dados específicos da área e implementando fluxos automatizados de decisão clínica através do LangChain, sempre respeitando protocolos de segurança, privacidade e sensibilidade cultural específicos do atendimento feminino, conforme instruções da disciplina da Pós Tech (8IADT) FIAP [(PDF)](https://github.com/marceloklotz/fiap-terceira-fase/blob/main/8IADT-Fase3-TechChallenge-Secretaria.pdf).
+Para tanto, utilizou-se o fine-tuning de LLMs com dados específicos da área e implementando fluxos automatizados de decisão clínica através do LangChain, sempre respeitando protocolos de segurança, privacidade e sensibilidade cultural específicos do atendimento feminino, conforme instruções da disciplina da Pós Tech (8IADT) FIAP [(PDF)](https://github.com/marceloklotz/fiap-terceira-fase-ssp-df/blob/main/Desafio-8IADT-Fase3-TechChallenge-Secretaria.pdf).
 
 ## 👥 Integrantes do grupo
 Os membros do grupo são compostos pelos seguintes servidores da Secretaria de Segurança Pública do Distrito Federal (SSP/DF):
@@ -30,31 +30,13 @@ Os membros do grupo são compostos pelos seguintes servidores da Secretaria de S
 
 ## 🎲 Base de dados
 
-O projeto fundamentou-se na criação de um conjunto de dados especializado chamado health_qa.jsonl, contendo aproximadamente 100 exemplos de perguntas e respostas estruturadas em formato de instrução. Os temas abrangem áreas críticas da saúde da mulher, como:
-- Sinais de alerta na gestação e puerpério
-- Protocolos de conduta em casos de violência doméstica
-- Orientações sobre contracepção, menopausa e saúde mental materna
-- Rastreamento preventivo de câncer de colo do útero e de mama
+Foi utilizado um dataset sintético (PubMedQA) servindo a dois propósitos complementares: (1) garantir cobertura de temas clinicamente críticos em português (o PubMedQA é majoritariamente em inglês); e (2) fornecer dados de treinamento baseados nas diretrizes brasileiras (FEBRASGO, INCA, Ministério da Saúde) que são as referências aplicáveis no contexto hospitalar nacional. Isso porque dados reais de pacientes são protegidos pela LGPD (Lei Geral de Proteção de Dados) e por normas do CFM (Conselho Federal de Medicina). Em um protótipo acadêmico é inviável usar prontuários reais. Dados sintéticos — gerados manualmente por especialistas ou com auxílio de IA, mas revisados — permitem desenvolver e testar pipelines sem expor informações sensíveis. Esta é prática padrão em pesquisa de IA em saúde.
 
-Utilizando a técnica LoRA (Low-Rank Adaptation) no modelo base sshleifer/tiny-gpt2, o processo de treinamento gerou os seguintes indicadores técnicos:
+O PubMedQA é um benchmark biomédico amplamente reconhecido na comunidade científica. Ele contém 1.000 perguntas clínicas extraídas de artigos publicados no PubMed (base de dados de literatura médica da Biblioteca Nacional de Medicina dos EUA).
 
-Parâmetros Treináveis: Apenas 64 parâmetros foram ajustados, representando cerca de 0,03% do total do modelo, o que permitiu a execução em ambiente de CPU.
-Performance de Treinamento: Após duas épocas, a função de perda (loss) estabilizou em aproximadamente 10,74.
-Nota Técnica: Embora o modelo gerado seja um protótipo de baixa fidelidade semântica devido ao seu tamanho reduzido, ele valida com sucesso o pipeline técnico de especialização para o domínio da saúde.
+O desafio exige que o fine-tuning seja realizado com 'dados específicos da área', e o PubMedQA fornece literatura biomédica revisada por pares, com fonte citável (PMID) — atendendo ao critério de “explainability”. Aproximadamente 27% dos registros cobrem temas de saúde feminina diretamente relevantes (ginecologia, obstetrícia, contracepção, câncer de mama, violência, saúde mental materna). O download é feito diretamente do GitHub oficial do projeto, sem necessidade de Google Drive.
 
-Foi gerada uma base de conhecimento baseada em protocolos clínicos simplificados, indexada para o sistema de Geração Aumentada por Recuperação (RAG).
-- **Vetorização:** Os documentos foram transformados em vetores numéricos usando o modelo de embedding all-MiniLM-L6-v2.
-- **Indexação:** Utilizou-se a biblioteca FAISS para permitir buscas semânticas ultrarrápidas, recuperando trechos dos protocolos em milissegundos para embasar as respostas da IA.
-
-O sistema de triagem, orquestrado pelo LangGraph, foi submetido a uma bateria de testes com cinco cenários clínicos reais (como suspeita de pré-eclâmpsia e rastreamento atrasado). Os dados de saída revelaram:
-
-- Acurácia na Classificação de Risco: 100% de precisão na distinção entre risco "ALTO" e "BAIXO".
-- Acurácia na Escolha de Conduta: 100% de sucesso na seleção entre encaminhamento urgente ou orientação de rotina.
-- Segurança e Anonimização: O pipeline aplicou com sucesso a detecção e remoção de dados sensíveis (CPFs, e-mails, telefones) via expressões regulares antes do processamento.
-
-Os dados gerados reforçam um modelo de governança clínica onde:
-- Casos de alto risco acionam regras determinísticas e não dependem da geração criativa da LLM, garantindo encaminhamento imediato.
-- Regras de segurança estão codificadas diretamente no prompt para impedir diagnósticos definitivos ou prescrições medicamentosas pelo assistente.
+O relatório técnico detalha como o código seleciona os registros para aplicar filtros relevantes, resultando em um subconjunto de registros biomédicos com alta relevância para o domínio do trabalho, que foram então convertidos para o formato interno do projeto.
   
 ## 📒 Relatório técnico
 
