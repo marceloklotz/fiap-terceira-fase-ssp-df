@@ -36,14 +36,14 @@ O PubMedQA é um benchmark biomédico amplamente reconhecido na comunidade cient
 
 O desafio exige que o fine-tuning seja realizado com 'dados específicos da área', e o PubMedQA fornece literatura biomédica revisada por pares, com fonte citável (PMID) — atendendo ao critério de “explainability”. Aproximadamente 27% dos registros cobrem temas de saúde feminina diretamente relevantes (ginecologia, obstetrícia, contracepção, câncer de mama, violência, saúde mental materna). O download é feito diretamente do GitHub oficial do projeto, sem necessidade de Google Drive.
 
-O relatório técnico detalha como o código seleciona os registros para aplicar filtros relevantes, resultando em um subconjunto de registros biomédicos com alta relevância para o domínio do trabalho, que foram então convertidos para o formato interno do projeto.
+O relatório técnico detalha como o código seleciona os registros para aplicar filtros relevantes, resultando em um subconjunto de registros biomédicos com alta relevância para o domínio do trabalho, que foram então convertidos para o formato interno do projeto. Além disso, trata do mapeamento das categorias e dos registros criados manualmente em português, baseados em diretrizes brasileiras e internacionais.
   
 ## 📒 Relatório técnico
 
 O relatório técnico descreve o desafio proposto e a forma de exploração de dados adotada pelos membros do grupo, explicando as estratégias de pré-processamento e limpeza dos dados, os modelos avaliados e utilizados, os resultados obtidos, a interpretação do dados, além da aplicabilidade prática e as lições aprendidas durante o desenvolvimento da atividade acadêmica.
 
 O download do relatório pode ser feito diretamente pelo seguinte link: 
-https://github.com/marceloklotz/fiap-terceira-fase/blob/main/Relatorio-Tecnico-Terceira-Fase.pdf
+https://github.com/marceloklotz/fiap-terceira-fase-ssp-df/blob/main/relatorio-tecnico-terceira-fase.pdf
 
 ## 📽️ Vídeo explicativo
 
