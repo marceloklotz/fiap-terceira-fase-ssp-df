@@ -40,10 +40,12 @@ O relatório técnico detalha como o código seleciona os registros para aplicar
   
 ## 📒 Relatório técnico
 
-O relatório técnico descreve o desafio proposto e a forma de exploração de dados adotada pelos membros do grupo, explicando as estratégias de pré-processamento e limpeza dos dados, os modelos avaliados e utilizados, os resultados obtidos, a interpretação do dados, além da aplicabilidade prática e as lições aprendidas durante o desenvolvimento da atividade acadêmica.
+O Relatório Técnico detalha a fundamentação teórica e a implementação prática do assistente, descrevendo uma arquitetura modular em cinco etapas: pré-processamento com anonimização (LGPD), fine-tuning com LoRA, recuperação de informações (RAG/FAISS), orquestração com LangChain e a criação de quatro fluxos clínicos via LangGraph.
+
+O documento aprofunda a estratégia de dados híbrida, combinando literatura biomédica do PubMedQA com diretrizes brasileiras (FEBRASGO, INCA, OMS) em dados sintéticos, além de apresentar uma avaliação quantitativa abrangente por meio de métricas ROUGE, cobertura de termos médicos e uma rigorosa análise de bias e equidade demográfica. Por fim, o relatório discute as considerações éticas, a interpretabilidade das respostas (explainability) e os limites de atuação do protótipo como ferramenta de apoio à decisão.
 
 O download do relatório pode ser feito diretamente pelo seguinte link: 
-https://github.com/marceloklotz/fiap-terceira-fase-ssp-df/blob/main/relatorio-tecnico-terceira-fase.pdf
+https://github.com/marceloklotz/fiap-terceira-fase-ssp-df
 
 ## 📽️ Vídeo explicativo
 
