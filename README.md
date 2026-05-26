@@ -51,6 +51,8 @@ https://github.com/marceloklotz/fiap-terceira-fase-ssp-df
 
 O vídeo explicativo sobre a metologia, resultados e notebook em execução foi disponbilizado a partir do seguinte link:
 
-![FIAP - TECH CHALLENGE (TERCEIRA FASE)](https://i.ytimg.com/vi/F-G5JFNiwdE/hqdefault.jpg) 
+<p align="center">
+  <img src="https://i.ytimg.com/vi/F-G5JFNiwdE/hqdefault.jpg" alt="FIAP - TECH CHALENGE (TERCEIRA FASE)">
+</p>
 
 <p align="center"> https://youtu.be/F-G5JFNiwdE </p>
