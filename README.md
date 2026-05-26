@@ -45,7 +45,7 @@ O Relatório Técnico detalha a fundamentação teórica e a implementação pr�
 O documento aprofunda a estratégia de dados híbrida, combinando literatura biomédica do PubMedQA com diretrizes brasileiras (FEBRASGO, INCA, OMS) em dados sintéticos, além de apresentar uma avaliação quantitativa abrangente por meio de métricas ROUGE, cobertura de termos médicos e uma rigorosa análise de bias e equidade demográfica. Por fim, o relatório discute as considerações éticas, a interpretabilidade das respostas (explainability) e os limites de atuação do protótipo como ferramenta de apoio à decisão.
 
 O download do relatório pode ser feito diretamente pelo seguinte link: 
-https://github.com/marceloklotz/fiap-terceira-fase-ssp-df
+[https://github.com/marceloklotz/fiap-terceira-fase-ssp-df](https://github.com/marceloklotz/fiap-terceira-fase-ssp-df/blob/main/relatorio-tecnico-terceira-fase.pdf)
 
 ## 📽️ Vídeo explicativo
 
